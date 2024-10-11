@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Smt</title>
+    <style>
+        /* Add or update these styles in your existing CSS */
+
+        body {
+            padding: 0;
+            margin: 0;
+            min-height: 100vh;
+            background-image: linear-gradient(rgb(154, 154, 154), rgb(255, 255, 255));
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .created {
+            transition: 200ms;
+        }
+
+        .created:hover {
+            transition: 2000ms;
+            scale: 110%
+        }
+
+        .nav {
+            margin: 0;
+            height: 70px;
+            width: 100%;
+            background-color: rgb(62, 62, 62);
+            text-align: center;
+            padding-top: 30px;
+        }
+
+
+        .nav h1 {
+            margin: 0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: aliceblue;
+            transition: color 0.5s ease, transform 0.5s ease;
+        }
+
+        .nav h1.transition {
+            color: #ffcc00;
+            /* Color you want during transition */
+            transform: scale(1.5);
+            /* Optional: scales up the text */
+        }
+
+        .form-wrapper {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            text-align: center;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .input {
+            width: 80%;
+            height: 40px;
+            text-align: center;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            transition: 200ms;
+            background-color: rgb(206, 206, 206);
+            color: black;
+        }
+
+        .input:hover {
+            scale: 110%;
+            background-color: rgb(144, 173, 177);
+            color: black;
+        }
+
+        .input:focus {
+            background-color: rgb(62, 62, 62);
+            color: white;
+            font-size: 30px;
+        }
+
+        .button-wrapper {
+            display: flex;
+            gap: 20px;
+        }
+
+        .button {
+            width: 120px;
+            height: 40px;
+            font-size: 23px;
+            border-radius: 20px;
+            transition: 200ms;
+        }
+
+        .button:hover {
+            scale: 110%;
+        }
+
+        .submit-button {
+            background-color: rgb(147, 236, 14);
+
+        }
+
+        .more-button {
+            width: 200px;
+            background-color: rgb(109, 84, 255);
+        }
+
+        .clear-button {
+            background-color: rgb(225, 74, 102);
+        }
+
+        .contents {
+            padding: 0;
+            margin: 0;
+        }
+
+        .more-button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body">
+    <div class="nav">
+        <h1>Welcome to ImageSearcher</h1>
+    </div>
+
+    <div class="form-wrapper">
+        <form class="form" ix>
+            <input id="input" class="input" type="text" placeholder="Bir Şey Ara!">
+            <div class="button-wrapper">
+                <button type="submit" id="submit" class="button submit-button">Ara!</button>
+                <button type="reset" id="clear" class="button clear-button">Temizle</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div id="contents" class="contents"></div>
+    <div id="more-button-container" class="more-button-container"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

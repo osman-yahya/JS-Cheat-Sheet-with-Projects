@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Döviz Anlık</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            min-height: 100vh;
+            background-image: linear-gradient(rgb(255, 255, 255), rgb(154, 154, 154));
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .nav {
+            margin: 0;
+            height: 70px;
+            width: 100%;
+            background-color: rgb(41, 41, 41);
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        .nav h1 {
+            margin: 0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: aliceblue;
+            transition: color 0.5s ease, transform 0.5s ease;
+        }
+
+        .nav h1.transition {
+            color: #ffcc00;
+            transform: scale(1.5);
+        }
+
+        .content {
+            width: 80%;
+            height: 100px;
+            background-image: radial-gradient(circle, rgb(63, 63, 63), rgb(100, 100, 100));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .outer {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #inputin {
+            width: 100px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        #inputout {
+            width: 100px;
+            height: 20px;
+            margin-left: 5px;
+        }
+        select {
+            width: 70px;
+            height: 25px;
+        }
+        select option {
+            padding-left: 10px;
+            padding-top: 3px;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <h1>Anlık Döviz</h1>
+
+    </div>
+    <div class="outer">
+        <div class="content">
+            <input placeholder="Tutar Giriniz" type="number" id="inputin">
+            <select id="in">
+                <option value="AUD">AUD - Avustralya Doları</option>
+                <option value="BGN">BGN - Bulgar Levası</option>
+                <option value="BRL">BRL - Brezilya Reali</option>
+                <option value="CAD">CAD - Kanada Doları</option>
+                <option value="CHF">CHF - İsviçre Frangı</option>
+                <option value="CNY">CNY - Çin Yuanı</option>
+                <option value="CZK">CZK - Çek Korunası</option>
+                <option value="DKK">DKK - Danimarka Kronu</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="GBP">GBP - İngiliz Sterlini</option>
+                <option value="HKD">HKD - Hong Kong Doları</option>
+                <option value="HRK">HRK - Hırvat Kunas</option>
+                <option value="HUF">HUF - Macar Forinti</option>
+                <option value="IDR">IDR - Endonezya Rupisi</option>
+                <option value="ILS">ILS - İsrail Şekeli</option>
+                <option value="INR">INR - Hindistan Rupisi</option>
+                <option value="ISK">ISK - İzlanda Kronu</option>
+                <option value="JPY">JPY - Japon Yeni</option>
+                <option value="KRW">KRW - Güney Kore Wonu</option>
+                <option value="MXN">MXN - Meksika Pezosu</option>
+                <option value="MYR">MYR - Malezya Ringgiti</option>
+                <option value="NOK">NOK - Norveç Kronu</option>
+                <option value="NZD">NZD - Yeni Zelanda Doları</option>
+                <option value="PHP">PHP - Filipin Pesosu</option>
+                <option value="PLN">PLN - Polonya Zlotisi</option>
+                <option value="RON">RON - Rumen Leyi</option>
+                <option value="RUB">RUB - Rus Rublesi</option>
+                <option value="SEK">SEK - İsveç Kronu</option>
+                <option value="SGD">SGD - Singapur Doları</option>
+                <option value="THB">THB - Tayland Bahtı</option>
+                <option value="TRY">TRY - Türk Lirası</option>
+                <option value="USD">USD - Amerikan Doları</option>
+                <option value="ZAR">ZAR - Güney Afrika Randı</option>
+            </select>
+            <p style="margin : 5px; font-weight: bold; color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">CONVERT TO</p> 
+            <select id="out">
+                <option value="AUD">AUD - Avustralya Doları</option>
+                <option value="BGN">BGN - Bulgar Levası</option>
+                <option value="BRL">BRL - Brezilya Reali</option>
+                <option value="CAD">CAD - Kanada Doları</option>
+                <option value="CHF">CHF - İsviçre Frangı</option>
+                <option value="CNY">CNY - Çin Yuanı</option>
+                <option value="CZK">CZK - Çek Korunası</option>
+                <option value="DKK">DKK - Danimarka Kronu</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="GBP">GBP - İngiliz Sterlini</option>
+                <option value="HKD">HKD - Hong Kong Doları</option>
+                <option value="HRK">HRK - Hırvat Kunas</option>
+                <option value="HUF">HUF - Macar Forinti</option>
+                <option value="IDR">IDR - Endonezya Rupisi</option>
+                <option value="ILS">ILS - İsrail Şekeli</option>
+                <option value="INR">INR - Hindistan Rupisi</option>
+                <option value="ISK">ISK - İzlanda Kronu</option>
+                <option value="JPY">JPY - Japon Yeni</option>
+                <option value="KRW">KRW - Güney Kore Wonu</option>
+                <option value="MXN">MXN - Meksika Pezosu</option>
+                <option value="MYR">MYR - Malezya Ringgiti</option>
+                <option value="NOK">NOK - Norveç Kronu</option>
+                <option value="NZD">NZD - Yeni Zelanda Doları</option>
+                <option value="PHP">PHP - Filipin Pesosu</option>
+                <option value="PLN">PLN - Polonya Zlotisi</option>
+                <option value="RON">RON - Rumen Leyi</option>
+                <option value="RUB">RUB - Rus Rublesi</option>
+                <option value="SEK">SEK - İsveç Kronu</option>
+                <option value="SGD">SGD - Singapur Doları</option>
+                <option value="THB">THB - Tayland Bahtı</option>
+                <option value="TRY">TRY - Türk Lirası</option>
+                <option value="USD">USD - Amerikan Doları</option>
+                <option value="ZAR">ZAR - Güney Afrika Randı</option>
+            </select>
+            <input placeholder="Bekleniyor" type="number" id="inputout" readonly>
+
+        </div>
+    </div>
+
+    <script src="navbar.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
